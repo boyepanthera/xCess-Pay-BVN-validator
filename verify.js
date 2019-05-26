@@ -3,20 +3,8 @@ import passKeys from './config';
 import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser  from 'body-parser';
-import flash from 'connect-flash';
-const port = 4040;
+const port = process.env.PORT;
 const app= express();
-
-// app.configure(function () {
-//     app.use(express.cookieParser('keyboard cat'));
-//     app.use(express.session({
-//         cookie: {
-//             maxAge: 60000
-//         }
-//     }));
-//     app.use(flash());
-// });
-
 dotenv.config();
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({
@@ -36,16 +24,14 @@ app.post('/validate', (req, res) => {
     request('https://ravesandboxapi.flutterwave.com/v2/kyc/bvn/'+data.bvn+'?seckey='+passKeys.secKey, (err, response, detail) => {
         try {
             console.log(response.statusCode);
-            console.log(detail);
-            // req.flash ('success', 'Verification done successfully');
+            console.log(detail);     
             res.render('validated', {detail});
         }
         catch (err) {
             console.log(err);
-            // req.flash('error', "Your BVN is incorrect kindly crosscheck your BVN");
             return res.redirect('/');
         }
     });
 });
 
-const server = app.listen(port, (req, res) => { console.log('Server starting on port ' + port) }); 
+const server = app.listen(port, proceess.env.IP, (req, res) => { console.log('Server starting on port ' + port) }); 

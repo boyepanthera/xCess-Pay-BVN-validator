@@ -24,14 +24,13 @@
                 <% let bvnDetail= JSON.parse(detail) %>
                 <!-- <h1>Welcome to XcessPay, <span id="Fullname"><%= bvnDetail.data.first_name%></span></h1> -->
                 <br>
-                <p class="text-center text-primary"> Your Verification is Successful <i
-                        class="far fa-check-circle "></i>, Below is your BVN details</p>
+                <p class="text-center text-primary"><i class="far fa-check-circle "></i> Your Verification is Successful
+                    , Below is your BVN details</p>
                 <div id="accountDetails" class="">
                     <div class="card mx-auto d-block" style="width: 18rem;">
                         <h3 class="card-header">
                             <strong class='justify-content-center'>BVN details</strong>
                         </h3>
-                        
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><strong>First Name:</strong> <span class='text-right'></span><%= bvnDetail.data.first_name%> </li>
                                 <li class="list-group-item"><strong>Middle Name:</strong> <span class='text-right'></span><%= bvnDetail.data.middle_name%></li>
