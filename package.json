@@ -1,0 +1,21 @@
+{
+  "name": "excess-pay",
+  "version": "1.0.0",
+  "description": "A demo app for rave to do both frontend and backend validation for a payment company to further know its customer",
+  "main": "verify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm verify.js"
+  },
+  "author": "Isaac Orija",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.1",
+    "esm": "^3.2.25",
+    "express": "^4.17.0",
+    "request": "^2.88.0"
+  }
+}
