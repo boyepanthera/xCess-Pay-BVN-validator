@@ -34,4 +34,4 @@ app.post('/validate', (req, res) => {
     });
 });
 
-const server = app.listen(port, proceess.env.IP, (req, res) => { console.log('Server starting on port ' + port) }); 
+const server = app.listen(port, process.env.IP, (req, res) => { console.log('Server starting on port ' + port) }); 
